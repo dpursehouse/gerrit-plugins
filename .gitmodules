@@ -72,4 +72,4 @@
 	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
 [submodule "gc-conductor"]
 	path = gc-conductor
-	url = http://gerrit-review.googlesource.com/plugins/gc-conductor
+	url = https://gerrit-review.googlesource.com/plugins/gc-conductor
