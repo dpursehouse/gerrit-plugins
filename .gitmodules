@@ -1,0 +1,66 @@
+[submodule "admin-console"]
+	path = admin-console
+	url = https://gerrit-review.googlesource.com/plugins/admin-console
+[submodule "delete-project"]
+	path = delete-project
+	url = https://gerrit-review.googlesource.com/plugins/delete-project
+[submodule "events-log"]
+	path = events-log
+	url = https://gerrit-review.googlesource.com/plugins/events-log
+[submodule "force-draft"]
+	path = force-draft
+	url = https://gerrit-review.googlesource.com/plugins/force-draft
+[submodule "gitiles"]
+	path = gitiles
+	url = https://gerrit-review.googlesource.com/plugins/gitiles
+[submodule "go-import"]
+	path = go-import
+	url = https://gerrit-review.googlesource.com/plugins/go-import
+[submodule "heartbeat"]
+	path = heartbeat
+	url = https://gerrit-review.googlesource.com/plugins/heartbeat
+[submodule "high-availability"]
+	path = high-availability
+	url = https://gerrit-review.googlesource.com/plugins/high-availability
+[submodule "importer"]
+	path = importer
+	url = https://gerrit-review.googlesource.com/plugins/importer
+[submodule "javamelody"]
+	path = javamelody
+	url = https://gerrit-review.googlesource.com/plugins/javamelody
+[submodule "lfs"]
+	path = lfs
+	url = https://gerrit-review.googlesource.com/plugins/lfs
+[submodule "log-level"]
+	path = log-level
+	url = https://gerrit-review.googlesource.com/plugins/log-level
+[submodule "oauth"]
+	path = oauth
+	url = https://gerrit-review.googlesource.com/plugins/oauth
+[submodule "owners"]
+	path = owners
+	url = https://gerrit-review.googlesource.com/plugins/owners
+[submodule "quota"]
+	path = quota
+	url = https://gerrit-review.googlesource.com/plugins/quota
+[submodule "readonly"]
+	path = readonly
+	url = https://gerrit-review.googlesource.com/plugins/readonly
+[submodule "rename-project"]
+	path = rename-project
+	url = https://gerrit-review.googlesource.com/plugins/rename-project
+[submodule "reviewers"]
+	path = reviewers
+	url = https://gerrit-review.googlesource.com/plugins/reviewers
+[submodule "slack-integration"]
+	path = slack-integration
+	url = https://gerrit-review.googlesource.com/plugins/slack-integration
+[submodule "uploadvalidator"]
+	path = uploadvalidator
+	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
+[submodule "verify-status"]
+	path = verify-status
+	url = https://gerrit-review.googlesource.com/plugins/verify-status
+[submodule "webhooks"]
+	path = webhooks
+	url = https://gerrit-review.googlesource.com/plugins/webhooks
