@@ -64,3 +64,6 @@
 [submodule "webhooks"]
 	path = webhooks
 	url = https://gerrit-review.googlesource.com/plugins/webhooks
+[submodule "its-base"]
+	path = its-base
+	url = https://gerrit-review.googlesource.com/plugins/its-base
