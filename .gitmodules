@@ -49,3 +49,12 @@
 [submodule "webhooks"]
 	path = webhooks
 	url = https://gerrit-review.googlesource.com/plugins/webhooks
+[submodule "uploadvalidator"]
+	path = uploadvalidator
+	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
+[submodule "its-base"]
+	path = its-base
+	url = https://gerrit-review.googlesource.com/plugins/its-base
+[submodule "project-group-structure"]
+	path = project-group-structure
+	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
