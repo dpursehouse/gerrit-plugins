@@ -64,3 +64,6 @@
 [submodule "log-level"]
 	path = log-level
 	url = https://gerrit-review.googlesource.com/plugins/log-level
+[submodule "oauth"]
+	path = oauth
+	url = https://gerrit-review.googlesource.com/plugins/oauth
