@@ -67,3 +67,6 @@
 [submodule "oauth"]
 	path = oauth
 	url = https://gerrit-review.googlesource.com/plugins/oauth
+[submodule "owners"]
+	path = owners
+	url = https://gerrit-review.googlesource.com/plugins/owners
