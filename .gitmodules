@@ -76,3 +76,6 @@
 [submodule "changemessage"]
 	path = changemessage
 	url = https://gerrit-review.googlesource.com/plugins/changemessage
+[submodule "rate-limiter"]
+	path = rate-limiter
+	url = https://gerrit-review.googlesource.com/plugins/rate-limiter
