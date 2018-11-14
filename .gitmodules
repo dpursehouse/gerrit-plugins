@@ -76,3 +76,6 @@
 [submodule "rate-limiter"]
 	path = rate-limiter
 	url = https://gerrit-review.googlesource.com/plugins/rate-limiter
+[submodule "messageoftheday"]
+	path = messageoftheday
+	url = https://gerrit-review.googlesource.com/plugins/messageoftheday
