@@ -82,3 +82,6 @@
 [submodule "autosubmitter"]
 	path = autosubmitter
 	url = https://gerrit-review.googlesource.com/plugins/autosubmitter
+[submodule "messageoftheday"]
+	path = messageoftheday
+	url = https://gerrit-review.googlesource.com/plugins/messageoftheday
