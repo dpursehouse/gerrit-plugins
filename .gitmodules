@@ -79,3 +79,6 @@
 [submodule "messageoftheday"]
 	path = messageoftheday
 	url = https://gerrit-review.googlesource.com/plugins/messageoftheday
+[submodule "gc-conductor"]
+	path = gc-conductor
+	url = https://gerrit-review.googlesource.com/plugins/gc-conductor
