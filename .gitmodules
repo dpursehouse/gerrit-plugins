@@ -73,3 +73,6 @@
 [submodule "rate-limiter"]
 	path = rate-limiter
 	url = https://gerrit-review.googlesource.com/plugins/rate-limiter
+[submodule "autosubmitter"]
+	path = autosubmitter
+	url = https://gerrit-review.googlesource.com/plugins/autosubmitter
