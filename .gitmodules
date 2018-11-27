@@ -85,3 +85,6 @@
 [submodule "messageoftheday"]
 	path = messageoftheday
 	url = https://gerrit-review.googlesource.com/plugins/messageoftheday
+[submodule "serviceuser"]
+	path = serviceuser
+	url = https://gerrit-review.googlesource.com/plugins/serviceuser
