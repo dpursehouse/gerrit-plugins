@@ -88,3 +88,6 @@
 [submodule "serviceuser"]
 	path = serviceuser
 	url = https://gerrit-review.googlesource.com/plugins/serviceuser
+[submodule "emoticons"]
+	path = emoticons
+	url = https://gerrit-review.googlesource.com/plugins/emoticons
