@@ -91,3 +91,6 @@
 [submodule "emoticons"]
 	path = emoticons
 	url = https://gerrit-review.googlesource.com/plugins/emoticons
+[submodule "reviewassistant"]
+	path = reviewassistant
+	url = https://gerrit-review.googlesource.com/plugins/reviewassistant
