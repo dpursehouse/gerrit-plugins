@@ -27,3 +27,25 @@ git submodule foreach 'git commit -a -m "Format all Bazel build files with build
 git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pushed'
 ```
 
+## Update submodules
+
+```
+git submodule foreach 'git checkout -t origin/stable-2.15 || echo execute only once or so'
+git submodule foreach 'git checkout stable-2.15 || echo no stable-2.15 branch'
+git submodule foreach 'git pull || echo dirty status?'
+git commit -a -m "Update submodules based on each latest branch tip" || echo cannot add or commit
+git push origin HEAD:stable-2.15 || echo not pushed
+```
+
+## Review merge-up change using bazel
+### PoC, CI otherwise; assumes jq
+
+```
+git submodule foreach 'curl -s -o change.json https://gerrit-review.googlesource.com/changes/?q=project:plugins/$name+status:open+branch:stable-2.15+merge+branch\&n=1\&o=CURRENT_REVISION\&o=DOWNLOAD_COMMANDS || echo no change'
+git submodule foreach 'tail --lines=+2 change.json | jq -r ".[0].revisions[].fetch.http.commands.Checkout" > change.fetch || echo no command'
+git submodule foreach 'chmod +x change.fetch && ./change.fetch || echo no fetch'
+git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
+git submodule foreach 'bazel test //... || echo no standalone'
+git submodule foreach 'rm change.json change.fetch && git checkout stable-2.15'
+```
+
