@@ -49,3 +49,10 @@ git submodule foreach 'bazel test //... || echo no standalone'
 git submodule foreach 'rm change.json change.fetch && git checkout stable-2.14'
 ```
 
+## Review bazlets upgrade change
+### -works with trailing commands above
+
+```
+git submodule foreach 'curl -s -o change.json https://gerrit-review.googlesource.com/changes/?q=project:plugins/$name+status:open+branch:stable-2.14+Upgrade+bazlets\&n=1\&o=CURRENT_REVISION\&o=DOWNLOAD_COMMANDS || echo no change'
+```
+
