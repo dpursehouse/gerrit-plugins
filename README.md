@@ -44,6 +44,7 @@ git push origin HEAD:stable-2.14 || echo not pushed
 git submodule foreach 'curl -s -o change.json https://gerrit-review.googlesource.com/changes/?q=project:plugins/$name+status:open+branch:stable-2.14+merge+branch\&n=1\&o=CURRENT_REVISION\&o=DOWNLOAD_COMMANDS || echo no change'
 git submodule foreach 'tail --lines=+2 change.json | jq -r ".[0].revisions[].fetch.http.commands.Checkout" > change.fetch || echo no command'
 git submodule foreach 'chmod +x change.fetch && ./change.fetch || echo no fetch'
+git submodule foreach 'git log -n 1 || echo no log'
 git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
 git submodule foreach 'bazel test //... || echo no tests'
 git submodule foreach 'rm change.json change.fetch && git checkout stable-2.14 || echo no files'
