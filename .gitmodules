@@ -84,7 +84,7 @@
 	url = https://gerrit-review.googlesource.com/plugins/gc-conductor
 [submodule "task"]
 	path = task
-	url = https://gerrit-review.googlesouce.com/plugins/task
+	url = https://gerrit-review.googlesource.com/plugins/task
 [submodule "serviceuser"]
 	path = serviceuser
 	url = https://gerrit-review.googlesource.com/plugins/serviceuser
