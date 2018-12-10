@@ -7,8 +7,8 @@ This project contains several submodules, each of which is a Gerrit plugin.
 To update the bazlets revision on all plugins:
 
 ```
-git submodule foreach  ../update-bazlets.py -r 6d3fd710ea4ca44805bb8c858d72b53bd3a500f3 -b stable-2.15 -v 2.15.5
-git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pushed'
+git submodule foreach  ../update-bazlets.py -r d025e909c2e8a369712165309f599a2765005f2d -b stable-2.16 -v 2.16.1
+git submodule foreach 'git push origin HEAD:refs/for/stable-2.16 || echo not pushed'
 ```
 
 ## Format code
@@ -16,7 +16,7 @@ git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pus
 ```
 git submodule foreach 'git ls-files | grep java$ | xargs google-java-format -i'
 git submodule foreach 'git commit -a -m "Format all Java files with google-java-format" || echo nothing to commit'
-git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pushed'
+git submodule foreach 'git push origin HEAD:refs/for/stable-2.16 || echo not pushed'
 ```
 
 ## Format build files
@@ -24,6 +24,28 @@ git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pus
 ```
 git submodule foreach 'git ls-files | grep "WORKSPACE\|BUILD\|\.bzl$" | xargs buildifier -mode=fix'
 git submodule foreach 'git commit -a -m "Format all Bazel build files with buildifier" || echo nothing to commit'
-git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pushed'
+git submodule foreach 'git push origin HEAD:refs/for/stable-2.16 || echo not pushed'
+```
+
+## Update submodules
+
+```
+git submodule foreach 'git checkout -t origin/stable-2.16 || echo execute only once or so'
+git submodule foreach 'git checkout stable-2.16 || echo no stable-2.16 branch'
+git submodule foreach 'git pull || echo dirty status?'
+git commit -a -m "Update submodules based on each latest branch tip" || echo cannot add or commit
+git push origin HEAD:stable-2.16 || echo not pushed
+```
+
+## Review merge-up change using bazel
+### PoC, CI otherwise; assumes jq
+
+```
+git submodule foreach 'curl -s -o change.json https://gerrit-review.googlesource.com/changes/?q=project:plugins/$name+status:open+branch:stable-2.16+merge+branch\&n=1\&o=CURRENT_REVISION\&o=DOWNLOAD_COMMANDS || echo no change'
+git submodule foreach 'tail --lines=+2 change.json | jq -r ".[0].revisions[].fetch.http.commands.Checkout" > change.fetch || echo no command'
+git submodule foreach 'chmod +x change.fetch && ./change.fetch || echo no fetch'
+git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
+git submodule foreach 'bazel test //... || echo no standalone'
+git submodule foreach 'rm change.json change.fetch && git checkout stable-2.16'
 ```
 
