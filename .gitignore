@@ -1,1 +1,4 @@
-force-draft
+# LC_COLLATE=C sort
+/.idea/
+/force-draft
+/gerrit-plugins.iml
