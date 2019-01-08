@@ -19,24 +19,15 @@
 [submodule "high-availability"]
 	path = high-availability
 	url = https://gerrit-review.googlesource.com/plugins/high-availability
-[submodule "importer"]
-	path = importer
-	url = https://gerrit-review.googlesource.com/plugins/importer
 [submodule "javamelody"]
 	path = javamelody
 	url = https://gerrit-review.googlesource.com/plugins/javamelody
 [submodule "lfs"]
 	path = lfs
 	url = https://gerrit-review.googlesource.com/plugins/lfs
-[submodule "quota"]
-	path = quota
-	url = https://gerrit-review.googlesource.com/plugins/quota
 [submodule "readonly"]
 	path = readonly
 	url = https://gerrit-review.googlesource.com/plugins/readonly
-[submodule "rename-project"]
-	path = rename-project
-	url = https://gerrit-review.googlesource.com/plugins/rename-project
 [submodule "reviewers"]
 	path = reviewers
 	url = https://gerrit-review.googlesource.com/plugins/reviewers
@@ -52,9 +43,6 @@
 [submodule "uploadvalidator"]
 	path = uploadvalidator
 	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
-[submodule "project-group-structure"]
-	path = project-group-structure
-	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
 [submodule "changemessage"]
 	path = changemessage
 	url = https://gerrit-review.googlesource.com/plugins/changemessage
