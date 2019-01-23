@@ -37,6 +37,20 @@ git commit -a -m "Update submodules based on each latest branch tip" || echo can
 git push origin HEAD:stable-2.15 || echo not pushed
 ```
 
+## Merge-up to here
+
+```
+git submodule foreach 'git checkout stable-2.15 || echo no stable-2.15 branch'
+git submodule foreach 'git merge stable-2.14 || echo no merge'
+git submodule foreach 'vi WORKSPACE || echo no WORKSPACE'
+git submodule foreach 'git diff || echo no diff'
+git submodule foreach 'f=`git rev-parse --git-dir`/hooks/commit-msg; curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg; chmod +x $f || echo no hook'
+git submodule foreach 'git commit -a || echo nothing to commit'
+git submodule foreach 'git status || echo no status'
+git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pushed'
+git submodule foreach 'git reset origin/stable-2.15 || echo no reset'
+```
+
 ## Review merge-up change using bazel
 ### PoC, CI otherwise; assumes jq
 
