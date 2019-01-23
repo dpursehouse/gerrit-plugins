@@ -46,7 +46,8 @@ git submodule foreach 'chmod +x change.fetch && ./change.fetch || echo no fetch'
 git submodule foreach 'git log -n 1 || echo no log'
 git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
 git submodule foreach 'bazel test //... || echo no tests'
-git submodule foreach 'rm change.json change.fetch && git checkout stable-2.14 || echo no files'
+git submodule foreach 'rm change.json change.fetch || echo no files'
+git submodule foreach 'git checkout stable-2.14 || echo no branch'
 ```
 
 ## Review bazlets upgrade change
