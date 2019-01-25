@@ -70,3 +70,6 @@
 [submodule "emoticons"]
 	path = emoticons
 	url = https://gerrit-review.googlesource.com/plugins/emoticons
+[submodule "quota"]
+	path = quota
+	url = https://gerrit-review.googlesource.com/plugins/quota
