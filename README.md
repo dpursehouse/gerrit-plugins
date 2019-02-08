@@ -30,9 +30,8 @@ git submodule foreach 'git push origin HEAD:refs/for/stable-2.14 || echo not pus
 ## Update submodules
 
 ```
-git submodule foreach 'git checkout stable-2.14 || echo no branch'
-git submodule foreach 'git pull || echo dirty status?'
-git commit -a -m "Update submodules based on each latest branch tip" || echo cannot add or commit
+git submodule foreach 'git fetch && git checkout -q origin/stable-2.14 || echo no branch'
+git commit -a -m "Update revisions" || echo cannot add or commit
 git push origin HEAD:stable-2.14 || echo not pushed
 ```
 
