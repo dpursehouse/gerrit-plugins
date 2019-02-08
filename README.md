@@ -39,7 +39,7 @@ git push origin HEAD:stable-2.15 || echo not pushed
 ## Merge-up to here
 
 ```
-git submodule foreach 'git checkout stable-2.15 || echo no stable-2.15 branch'
+git submodule foreach 'git checkout stable-2.15 || echo no branch'
 git submodule foreach 'git merge stable-2.14 || echo no merge'
 git submodule foreach 'vi WORKSPACE || echo no WORKSPACE'
 git submodule foreach 'git diff || echo no diff'
