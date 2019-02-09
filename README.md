@@ -39,8 +39,9 @@ git push origin HEAD:stable-2.15 || echo not pushed
 ## Merge-up to here
 
 ```
+git submodule foreach 'git checkout stable-2.14 || echo no branch'
 git submodule foreach 'git checkout stable-2.15 || echo no branch'
-git submodule foreach 'git merge stable-2.14 || echo no merge'
+git submodule foreach 'git merge stable-2.14 --no-ff || echo no merge'
 git submodule foreach 'vi WORKSPACE || echo no WORKSPACE'
 git submodule foreach 'git diff || echo no diff'
 git submodule foreach 'f=`git rev-parse --git-dir`/hooks/commit-msg; curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg; chmod +x $f || echo no hook'
