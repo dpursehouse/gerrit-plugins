@@ -1,9 +1,6 @@
 [submodule "admin-console"]
 	path = admin-console
 	url = https://gerrit-review.googlesource.com/plugins/admin-console
-[submodule "delete-project"]
-	path = delete-project
-	url = https://gerrit-review.googlesource.com/plugins/delete-project
 [submodule "events-log"]
 	path = events-log
 	url = https://gerrit-review.googlesource.com/plugins/events-log
@@ -46,9 +43,6 @@
 [submodule "verify-status"]
 	path = verify-status
 	url = https://gerrit-review.googlesource.com/plugins/verify-status
-[submodule "webhooks"]
-	path = webhooks
-	url = https://gerrit-review.googlesource.com/plugins/webhooks
 [submodule "uploadvalidator"]
 	path = uploadvalidator
 	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
