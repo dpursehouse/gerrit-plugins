@@ -46,9 +46,6 @@
 [submodule "uploadvalidator"]
 	path = uploadvalidator
 	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
-[submodule "its-base"]
-	path = its-base
-	url = https://gerrit-review.googlesource.com/plugins/its-base
 [submodule "project-group-structure"]
 	path = project-group-structure
 	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
@@ -61,15 +58,9 @@
 [submodule "oauth"]
 	path = oauth
 	url = https://gerrit-review.googlesource.com/plugins/oauth
-[submodule "owners"]
-	path = owners
-	url = https://gerrit-review.googlesource.com/plugins/owners
 [submodule "rate-limiter"]
 	path = rate-limiter
 	url = https://gerrit-review.googlesource.com/plugins/rate-limiter
-[submodule "autosubmitter"]
-	path = autosubmitter
-	url = https://gerrit-review.googlesource.com/plugins/autosubmitter
 [submodule "messageoftheday"]
 	path = messageoftheday
 	url = https://gerrit-review.googlesource.com/plugins/messageoftheday
