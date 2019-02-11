@@ -30,11 +30,23 @@ git submodule foreach 'git push origin HEAD:refs/for/stable-2.16 || echo not pus
 ## Update submodules
 
 ```
-git submodule foreach 'git checkout -t origin/stable-2.16 || echo execute only once or so'
-git submodule foreach 'git checkout stable-2.16 || echo no stable-2.16 branch'
-git submodule foreach 'git pull || echo dirty status?'
-git commit -a -m "Update submodules based on each latest branch tip" || echo cannot add or commit
+git submodule foreach 'git fetch && git checkout -q origin/stable-2.16 || echo no branch'
+git commit -a -m "Update revisions" || echo cannot add or commit
 git push origin HEAD:stable-2.16 || echo not pushed
+```
+
+## Merge-up to here
+
+```
+git submodule foreach 'git checkout stable-2.16 || echo no branch'
+git submodule foreach 'git merge stable-2.15 --no-ff || echo no merge'
+git submodule foreach 'vi WORKSPACE || echo no WORKSPACE'
+git submodule foreach 'git diff || echo no diff'
+git submodule foreach 'f=`git rev-parse --git-dir`/hooks/commit-msg; curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg; chmod +x $f || echo no hook'
+git submodule foreach 'git commit -a || echo nothing to commit'
+git submodule foreach 'git status || echo no status'
+git submodule foreach 'git push origin HEAD:refs/for/stable-2.16 || echo not pushed'
+git submodule foreach 'git reset origin/stable-2.16 || echo no reset'
 ```
 
 ## Review merge-up change using bazel
@@ -47,7 +59,8 @@ git submodule foreach 'chmod +x change.fetch && ./change.fetch || echo no fetch'
 git submodule foreach 'git log -n 1 || echo no log'
 git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
 git submodule foreach 'bazel test //... || echo no tests'
-git submodule foreach 'rm change.json change.fetch && git checkout stable-2.16 || echo no files'
+git submodule foreach 'rm change.json change.fetch || echo no files'
+git submodule foreach 'git checkout -q origin/stable-2.16 || echo no branch'
 ```
 
 ## Review bazlets upgrade change
