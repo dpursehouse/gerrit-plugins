@@ -73,3 +73,6 @@
 [submodule "quota"]
 	path = quota
 	url = https://gerrit-review.googlesource.com/plugins/quota
+[submodule "batch"]
+	path = batch
+	url = https://gerrit-review.googlesource.com/plugins/batch
