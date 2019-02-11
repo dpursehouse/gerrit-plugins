@@ -30,9 +30,8 @@ git submodule foreach 'git push origin HEAD:refs/for/stable-2.15 || echo not pus
 ## Update submodules
 
 ```
-git submodule foreach 'git checkout stable-2.15 || echo no branch'
-git submodule foreach 'git pull || echo dirty status?'
-git commit -a -m "Update submodules based on each latest branch tip" || echo cannot add or commit
+git submodule foreach 'git fetch && git checkout -q origin/stable-2.15 || echo no branch'
+git commit -a -m "Update revisions" || echo cannot add or commit
 git push origin HEAD:stable-2.15 || echo not pushed
 ```
 
@@ -61,7 +60,7 @@ git submodule foreach 'git log -n 1 || echo no log'
 git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
 git submodule foreach 'bazel test //... || echo no tests'
 git submodule foreach 'rm change.json change.fetch || echo no files'
-git submodule foreach 'git checkout stable-2.15 || echo no branch'
+git submodule foreach 'git checkout -q origin/stable-2.15 || echo no branch'
 ```
 
 ## Review bazlets upgrade change
