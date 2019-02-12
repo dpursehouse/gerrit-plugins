@@ -25,9 +25,6 @@
 [submodule "readonly"]
 	path = readonly
 	url = https://gerrit-review.googlesource.com/plugins/readonly
-[submodule "rename-project"]
-	path = rename-project
-	url = https://gerrit-review.googlesource.com/plugins/rename-project
 [submodule "reviewers"]
 	path = reviewers
 	url = https://gerrit-review.googlesource.com/plugins/reviewers
