@@ -4,9 +4,6 @@
 [submodule "events-log"]
 	path = events-log
 	url = https://gerrit-review.googlesource.com/plugins/events-log
-[submodule "gitiles"]
-	path = gitiles
-	url = https://gerrit-review.googlesource.com/plugins/gitiles
 [submodule "go-import"]
 	path = go-import
 	url = https://gerrit-review.googlesource.com/plugins/go-import
