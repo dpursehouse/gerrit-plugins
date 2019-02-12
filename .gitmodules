@@ -40,9 +40,6 @@
 [submodule "uploadvalidator"]
 	path = uploadvalidator
 	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
-[submodule "project-group-structure"]
-	path = project-group-structure
-	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
 [submodule "changemessage"]
 	path = changemessage
 	url = https://gerrit-review.googlesource.com/plugins/changemessage
