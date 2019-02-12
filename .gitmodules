@@ -13,9 +13,6 @@
 [submodule "high-availability"]
 	path = high-availability
 	url = https://gerrit-review.googlesource.com/plugins/high-availability
-[submodule "importer"]
-	path = importer
-	url = https://gerrit-review.googlesource.com/plugins/importer
 [submodule "javamelody"]
 	path = javamelody
 	url = https://gerrit-review.googlesource.com/plugins/javamelody
