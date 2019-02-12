@@ -31,9 +31,6 @@
 [submodule "slack-integration"]
 	path = slack-integration
 	url = https://gerrit-review.googlesource.com/plugins/slack-integration
-[submodule "verify-status"]
-	path = verify-status
-	url = https://gerrit-review.googlesource.com/plugins/verify-status
 [submodule "uploadvalidator"]
 	path = uploadvalidator
 	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
