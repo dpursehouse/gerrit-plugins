@@ -31,8 +31,8 @@ git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
 
 ```
 git submodule foreach 'git fetch && git checkout -q origin/master || echo no branch'
-git commit -a -m "Update revisions" || echo cannot add or commit
-git push origin HEAD:master || echo not pushed
+git commit -a -m "Update revisions"
+git push origin HEAD:master
 ```
 
 ## Merge-up to here
