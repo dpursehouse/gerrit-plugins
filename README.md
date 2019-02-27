@@ -38,7 +38,8 @@ git push origin HEAD:master
 ## Merge-up to here
 
 ```
-git submodule foreach 'git checkout master || echo no branch'
+git submodule foreach 'git checkout stable-2.16 && git pull || git checkout stable-2.15 && git pull || echo no branch'
+git submodule foreach 'git checkout master && git pull || echo no branch'
 git submodule foreach 'git merge stable-2.16 --no-ff || git merge stable-2.15 --no-ff || echo no merge'
 git submodule foreach 'vi WORKSPACE || echo no WORKSPACE'
 git submodule foreach 'git diff || echo no diff'
