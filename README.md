@@ -38,15 +38,16 @@ git push origin HEAD:stable-2.16
 ## Merge-up to here
 
 ```
-git submodule foreach 'git checkout stable-2.16 || echo no branch'
+git submodule foreach 'git checkout stable-2.15 && git pull || echo no branch'
+git submodule foreach 'git checkout stable-2.16 && git pull || git checkout master && git pull || echo no branch'
 git submodule foreach 'git merge stable-2.15 --no-ff || echo no merge'
 git submodule foreach 'vi WORKSPACE || echo no WORKSPACE'
 git submodule foreach 'git diff || echo no diff'
 git submodule foreach 'f=`git rev-parse --git-dir`/hooks/commit-msg; curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg; chmod +x $f || echo no hook'
 git submodule foreach 'git commit -a || echo nothing to commit'
 git submodule foreach 'git status || echo no status'
-git submodule foreach 'git push origin HEAD:refs/for/stable-2.16 || echo not pushed'
-git submodule foreach 'git reset origin/stable-2.16 || echo no reset'
+git submodule foreach 'git push origin HEAD:refs/for/stable-2.16 || git push origin HEAD:refs/for/master || echo not pushed'
+git submodule foreach 'git reset origin/stable-2.16 || git reset origin/master || echo no reset'
 ```
 
 ## Review merge-up change using bazel
