@@ -18,13 +18,13 @@ def _main():
                         required=True, action='append',
                         help='query')
     parser.add_argument('-a', '--approve', dest='approve',
-                        required=False,
+                        required=False, action='store_true',
                         help='apply Code-Review+2 to changes')
     parser.add_argument('-v', '--verify', dest='verify',
-                        required=False,
+                        required=False, action='store_true',
                         help='apply Verified+1 to changes')
     parser.add_argument('-s', '--submit', dest='submit',
-                        required=False,
+                        required=False, action='store_true',
                         help='submit changes')
     parser.add_argument('-f', '--filter', dest='filter',
                         required=False,
@@ -38,8 +38,21 @@ def _main():
         changes = [c for c in changes
                    if c["project"].startswith(options.filter)]
     print("Found %d changes" % len(changes))
+    labels = {}
+    review = {}
+    if options.verify:
+        labels['Verified'] = 1
+    if options.approve:
+        labels['Code-Review'] = 2
+    if labels:
+        review['labels'] = labels
     for change in changes:
         print("%s : %s" % (change["project"], change["subject"]))
+        if review:
+            api.post("/changes/%s/revisions/current/review" % change["id"],
+                     json=review)
+        if options.submit:
+            api.post("/changes/%s/submit" % change["id"])
 
 
 if __name__ == "__main__":
