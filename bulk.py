@@ -29,6 +29,9 @@ def _main():
     parser.add_argument('-f', '--filter', dest='filter',
                         required=False,
                         help='filter changes by project prefix')
+    parser.add_argument('--abandon', dest='abandon',
+                        required=False, action='store_true',
+                        help='abandon changes')
     options = parser.parse_args()
 
     api = GerritRestAPI(url=options.url)
@@ -48,6 +51,9 @@ def _main():
         review['labels'] = labels
     for change in changes:
         print("%s : %s" % (change["project"], change["subject"]))
+        if options.abandon:
+            api.post("/changes/%s/abandon" % change["id"])
+            continue
         if review:
             api.post("/changes/%s/revisions/current/review" % change["id"],
                      json=review)
