@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 import argparse
+import sys
 from pygerrit2.rest import GerritRestAPI
 
 
@@ -51,14 +52,17 @@ def _main():
         review['labels'] = labels
     for change in changes:
         print("%s : %s" % (change["project"], change["subject"]))
-        if options.abandon:
-            api.post("/changes/%s/abandon" % change["id"])
-            continue
-        if review:
-            api.post("/changes/%s/revisions/current/review" % change["id"],
-                     json=review)
-        if options.submit:
-            api.post("/changes/%s/submit" % change["id"])
+        try:
+            if options.abandon:
+                api.post("/changes/%s/abandon" % change["id"])
+                continue
+            if review:
+                api.post("/changes/%s/revisions/current/review" % change["id"],
+                         json=review)
+            if options.submit:
+                api.post("/changes/%s/submit" % change["id"])
+        except Exception as e:
+            print("Operation failed: %s" % e, file=sys.stderr)
 
 
 if __name__ == "__main__":
