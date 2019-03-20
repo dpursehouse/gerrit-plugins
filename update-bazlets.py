@@ -19,7 +19,7 @@ def _main():
                         required=True,
                         help='bazlets branch')
     parser.add_argument('-v', '--version', dest='version',
-                        required=True,
+                        required=False,
                         help='gerrit API version')
     options = parser.parse_args()
     workspace_filename = os.path.abspath('WORKSPACE')
@@ -33,8 +33,11 @@ def _main():
     if updated_content != original_content:
         with open(workspace_filename, "w") as workspace:
             workspace.write(updated_content)
-        message = "Upgrade bazlets to latest %s to build with %s API" % \
-                  (options.branch, options.version)
+        if options.version:
+            message = "Upgrade bazlets to latest %s to build with %s API" % \
+                      (options.branch, options.version)
+        else:
+            message = "Upgrade bazlets to latest %s" % options.branch
         call(["git", "commit", "-a", "-m", "%s" % message])
 
 
