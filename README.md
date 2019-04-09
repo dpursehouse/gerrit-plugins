@@ -40,7 +40,7 @@ git push origin HEAD:stable-2.15
 ```
 git submodule foreach 'git checkout stable-2.14 && git pull || echo no branch'
 git submodule foreach 'git checkout stable-2.15 && git pull'
-git submodule foreach 'git merge stable-2.14 --no-ff || echo no merge'
+git submodule foreach 'git merge stable-2.14 --no-commit --no-ff || echo no merge'
 git submodule foreach 'vi WORKSPACE'
 git submodule foreach 'git diff || echo no diff'
 git submodule foreach 'f=`git rev-parse --git-dir`/hooks/commit-msg; curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg; chmod +x $f'
