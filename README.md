@@ -30,7 +30,7 @@ git submodule foreach 'git push origin HEAD:refs/for/stable-2.14 || echo not pus
 ## Update submodules
 
 ```
-git submodule foreach 'git fetch && git checkout -q origin/stable-2.14 || echo no branch'
+git submodule foreach 'git fetch && git checkout -q origin/stable-2.14'
 git commit -a -m "Update revisions"
 git push origin HEAD:stable-2.14
 ```
@@ -42,11 +42,11 @@ git push origin HEAD:stable-2.14
 git submodule foreach 'curl -s -o change.json https://gerrit-review.googlesource.com/changes/?q=project:plugins/$name+status:open+branch:stable-2.14+merge+branch\&n=1\&o=CURRENT_REVISION\&o=DOWNLOAD_COMMANDS || echo no change'
 git submodule foreach 'tail --lines=+2 change.json | jq -r ".[0].revisions[].fetch.http.commands.Checkout" > change.fetch || echo no command'
 git submodule foreach 'chmod +x change.fetch && ./change.fetch || echo no fetch'
-git submodule foreach 'git log -n 1 || echo no log'
+git submodule foreach 'git log -n 1'
 git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
 git submodule foreach 'bazel test //... || echo no tests'
 git submodule foreach 'rm change.json change.fetch || echo no files'
-git submodule foreach 'git checkout -q origin/stable-2.14 || echo no branch'
+git submodule foreach 'git checkout -q origin/stable-2.14'
 ```
 
 ## Review bazlets upgrade change
