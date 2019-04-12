@@ -52,3 +52,6 @@
 [submodule "gc-conductor"]
 	path = gc-conductor
 	url = https://gerrit-review.googlesource.com/plugins/gc-conductor
+[submodule "task"]
+	path = task
+	url = https://gerrit-review.googlesource.com/plugins/task
