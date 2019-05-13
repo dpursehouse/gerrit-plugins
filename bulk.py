@@ -15,8 +15,8 @@ def _main():
                         required=False,
                         default='https://gerrit-review.googlesource.com',
                         help='Gerrit URL')
-    parser.add_argument('-q', '--query', dest='queries',
-                        required=True, action='append',
+    parser.add_argument('-q', '--query', dest='query',
+                        required=True, action='store',
                         help='query')
     parser.add_argument('-a', '--approve', dest='approve',
                         required=False, action='store_true',
@@ -36,7 +36,7 @@ def _main():
     options = parser.parse_args()
 
     api = GerritRestAPI(url=options.url)
-    query_terms = "%20".join(options.queries)
+    query_terms = options.query.replace(" ", "%20")
     changes = api.get("/changes/?q=" + query_terms)
     if options.filter:
         changes = [c for c in changes
