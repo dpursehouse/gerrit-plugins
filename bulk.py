@@ -15,8 +15,8 @@ def _main():
                         required=False,
                         default='https://gerrit-review.googlesource.com',
                         help='Gerrit URL')
-    parser.add_argument('-q', '--query', dest='queries',
-                        required=True, action='append',
+    parser.add_argument('-q', '--query', dest='query',
+                        required=True, action='store',
                         help='query')
     parser.add_argument('-a', '--approve', dest='approve',
                         required=False, action='store_true',
@@ -33,10 +33,13 @@ def _main():
     parser.add_argument('--abandon', dest='abandon',
                         required=False, action='store_true',
                         help='abandon changes')
+    parser.add_argument('--hashtag', dest='hashtags',
+                        required=False, action='append',
+                        help='add hashtags')
     options = parser.parse_args()
 
     api = GerritRestAPI(url=options.url)
-    query_terms = "%20".join(options.queries)
+    query_terms = options.query.replace(" ", "%20")
     changes = api.get("/changes/?q=" + query_terms)
     if options.filter:
         changes = [c for c in changes
@@ -53,6 +56,9 @@ def _main():
     for change in changes:
         print("%s : %s" % (change["project"], change["subject"]))
         try:
+            if options.hashtags:
+                hashtags = {"add": options.hashtags}
+                api.post("/changes/%s/hashtags" % change["id"], json=hashtags)
             if options.abandon:
                 api.post("/changes/%s/abandon" % change["id"])
                 continue
