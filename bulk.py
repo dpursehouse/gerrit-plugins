@@ -36,6 +36,9 @@ def _main():
     parser.add_argument('--hashtag', dest='hashtags',
                         required=False, action='append',
                         help='add hashtags')
+    parser.add_argument('-r', '--reviewer', dest='reviewers',
+                        required=False, action='append',
+                        help='add reviwers')
     options = parser.parse_args()
 
     api = GerritRestAPI(url=options.url)
@@ -47,6 +50,8 @@ def _main():
     print("Found %d changes" % len(changes))
     labels = {}
     review = {}
+    if options.reviewers:
+        review['reviewers'] = [{"reviewer": r} for r in options.reviewers]
     if options.verify:
         labels['Verified'] = 1
     if options.approve:
