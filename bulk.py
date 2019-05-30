@@ -38,7 +38,7 @@ def _main():
                         help='add hashtags')
     parser.add_argument('-r', '--reviewer', dest='reviewers',
                         required=False, action='append',
-                        help='add reviwers')
+                        help='add reviewers')
     options = parser.parse_args()
 
     api = GerritRestAPI(url=options.url)
