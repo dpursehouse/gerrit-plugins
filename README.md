@@ -30,9 +30,9 @@ git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
 ## Update submodules
 
 ```
-git submodule foreach 'git fetch && git checkout -q origin/master'
+git submodule foreach 'git fetch && git checkout -q origin/stable-3.0'
 git commit -a -m "Update revisions"
-git push origin HEAD:master
+git push origin HEAD:stable-3.0
 ```
 
 ## Merge-up to here
