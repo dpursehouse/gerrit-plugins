@@ -18,6 +18,9 @@ def _main():
     parser.add_argument('-q', '--query', dest='query',
                         required=True, action='store',
                         help='query')
+    parser.add_argument('-o', '--option', dest='options',
+                        required=False, action='append',
+                        help='query options')
     parser.add_argument('-a', '--approve', dest='approve',
                         required=False, action='store_true',
                         help='apply Code-Review+2 to changes')
@@ -36,17 +39,25 @@ def _main():
     parser.add_argument('--hashtag', dest='hashtags',
                         required=False, action='append',
                         help='add hashtags')
+    parser.add_argument('-r', '--reviewer', dest='reviewers',
+                        required=False, action='append',
+                        help='add reviewers')
     options = parser.parse_args()
 
     api = GerritRestAPI(url=options.url)
     query_terms = options.query.replace(" ", "%20")
-    changes = api.get("/changes/?q=" + query_terms)
+    uri = "/changes/?q=" + query_terms
+    for option in options.options:
+        uri = uri + "&o=" + option
+    changes = api.get(uri)
     if options.filter:
         changes = [c for c in changes
                    if c["project"].startswith(options.filter)]
     print("Found %d changes" % len(changes))
     labels = {}
     review = {}
+    if options.reviewers:
+        review['reviewers'] = [{"reviewer": r} for r in options.reviewers]
     if options.verify:
         labels['Verified'] = 1
     if options.approve:
