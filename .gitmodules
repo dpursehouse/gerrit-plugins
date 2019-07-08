@@ -79,3 +79,6 @@
 [submodule "reviewassistant"]
 	path = reviewassistant
 	url = https://gerrit-review.googlesource.com/plugins/reviewassistant
+[submodule "project-group-structure"]
+	path = project-group-structure
+	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
