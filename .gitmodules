@@ -55,3 +55,6 @@
 [submodule "task"]
 	path = task
 	url = https://gerrit-review.googlesource.com/plugins/task
+[submodule "project-group-structure"]
+	path = project-group-structure
+	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
