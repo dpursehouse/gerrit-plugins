@@ -47,8 +47,9 @@ def _main():
     api = GerritRestAPI(url=options.url)
     query_terms = options.query.replace(" ", "%20")
     uri = "/changes/?q=" + query_terms
-    for option in options.options:
-        uri = uri + "&o=" + option
+    if options.options:
+        for option in options.options:
+            uri = uri + "&o=" + option
     changes = api.get(uri)
     if options.filter:
         changes = [c for c in changes
