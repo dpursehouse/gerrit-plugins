@@ -52,10 +52,14 @@ def _main():
     if query_options:
         uri += "".join(["&o=%s" % o for o in query_options])
     changes = api.get(uri)
+    changes_count = len(changes)
+    print("Found %d changes" % changes_count)
     if options.filter:
         changes = [c for c in changes
                    if c["project"].startswith(options.filter)]
-    print("Found %d changes" % len(changes))
+        filtered_count = len(changes)
+        if filtered_count < changes_count:
+            print("Filtered out %d changes" % (changes_count - filtered_count))
     labels = {}
     review = {}
     if options.reviewers:
