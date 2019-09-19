@@ -33,6 +33,9 @@ def _main():
     parser.add_argument('-f', '--filter', dest='filter',
                         required=False,
                         help='filter changes by project prefix')
+    parser.add_argument('-fs', '--subject', dest='subject',
+                        required=False,
+                        help='filter changes by subject prefix')
     parser.add_argument('--abandon', dest='abandon',
                         required=False, action='store_true',
                         help='abandon changes')
@@ -57,9 +60,12 @@ def _main():
     if options.filter:
         changes = [c for c in changes
                    if c["project"].startswith(options.filter)]
-        filtered_count = len(changes)
-        if filtered_count < changes_count:
-            print("Filtered out %d changes" % (changes_count - filtered_count))
+    if options.subject:
+        changes = [c for c in changes
+                   if c["subject"].startswith(options.subject)]
+    filtered_count = len(changes)
+    if filtered_count < changes_count:
+        print("Filtered out %d changes" % (changes_count - filtered_count))
     labels = {}
     review = {}
     if options.reviewers:
