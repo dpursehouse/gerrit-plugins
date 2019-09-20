@@ -5,6 +5,9 @@ import argparse
 import sys
 from pygerrit2.rest import GerritRestAPI
 
+COMMANDS = 'DOWNLOAD_COMMANDS'
+REVISION = 'CURRENT_REVISION'
+
 
 def _main():
     descr = 'Perform bulk operations on Gerrit'
@@ -21,6 +24,9 @@ def _main():
     parser.add_argument('-o', '--option', dest='options',
                         required=False, action='append',
                         help='query options')
+    parser.add_argument('-c', '--commands', dest='commands',
+                        required=False, action='store_true',
+                        help='how to fetch changes; appends -o ' + REVISION + ' -o ' + COMMANDS)
     parser.add_argument('-a', '--approve', dest='approve',
                         required=False, action='store_true',
                         help='apply Code-Review+2 to changes')
@@ -52,6 +58,11 @@ def _main():
     uri = "/changes/?q=" + query_terms
     query_options = [o.upper() for o
                      in options.options] if options.options else []
+    if options.commands:
+        if REVISION not in query_options:
+            query_options.append(REVISION)
+        if COMMANDS not in query_options:
+            query_options.append(COMMANDS)
     if query_options:
         uri += "".join(["&o=%s" % o for o in query_options])
     changes = api.get(uri)
@@ -92,6 +103,11 @@ def _main():
                 api.post("/changes/%s/submit" % change["id"])
         except Exception as e:
             print("Operation failed: %s" % e, file=sys.stderr)
+    if options.commands:
+        for change in changes:
+            repo = change["project"].split('/')[-1]
+            command = next(iter(change["revisions"].values()))["fetch"]["http"]["commands"]["Checkout"]
+            print("cd %s && %s && cd -" % (repo, command))
 
 
 if __name__ == "__main__":
