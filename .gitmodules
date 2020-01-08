@@ -10,3 +10,6 @@
 [submodule "rate-limiter"]
 	path = rate-limiter
 	url = https://gerrit.googlesource.com/plugins/rate-limiter
+[submodule "serviceuser"]
+	path = serviceuser
+	url = https://gerrit.googlesource.com/plugins/serviceuser
