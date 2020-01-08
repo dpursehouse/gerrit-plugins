@@ -7,3 +7,6 @@
 [submodule "heartbeat"]
 	path = heartbeat
 	url = https://gerrit.googlesource.com/plugins/heartbeat
+[submodule "rate-limiter"]
+	path = rate-limiter
+	url = https://gerrit.googlesource.com/plugins/rate-limiter
