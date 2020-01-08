@@ -4,3 +4,6 @@
 [submodule "events-log"]
 	path = events-log
 	url = https://gerrit.googlesource.com/plugins/events-log
+[submodule "heartbeat"]
+	path = heartbeat
+	url = https://gerrit.googlesource.com/plugins/heartbeat
