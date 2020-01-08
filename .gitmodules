@@ -1,3 +1,6 @@
 [submodule "high-availability"]
 	path = high-availability
 	url = https://gerrit.googlesource.com/plugins/high-availability
+[submodule "events-log"]
+	path = events-log
+	url = https://gerrit.googlesource.com/plugins/events-log
