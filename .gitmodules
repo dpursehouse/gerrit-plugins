@@ -13,3 +13,6 @@
 [submodule "serviceuser"]
 	path = serviceuser
 	url = https://gerrit.googlesource.com/plugins/serviceuser
+[submodule "readonly"]
+	path = readonly
+	url = https://gerrit-review.googlesource.com/plugins/readonly
