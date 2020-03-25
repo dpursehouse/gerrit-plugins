@@ -25,3 +25,6 @@
 [submodule "go-import"]
 	path = go-import
 	url = https://gerrit-review.googlesource.com/go-import
+[submodule "log-level"]
+	path = log-level
+	url = https://gerrit-review.googlesource.com/plugins/log-level
