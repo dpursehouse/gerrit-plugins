@@ -22,3 +22,6 @@
 [submodule "lfs"]
 	path = lfs
 	url = https://gerrit.googlesource.com/plugins/lfs
+[submodule "go-import"]
+	path = go-import
+	url = https://gerrit-review.googlesource.com/go-import
