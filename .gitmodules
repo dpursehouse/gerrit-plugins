@@ -28,3 +28,6 @@
 [submodule "log-level"]
 	path = log-level
 	url = https://gerrit-review.googlesource.com/plugins/log-level
+[submodule "reviewers"]
+	path = reviewers
+	url = https://gerrit-review.googlesource.com/plugins/reviewers
