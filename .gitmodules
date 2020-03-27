@@ -22,12 +22,12 @@
 [submodule "lfs"]
 	path = lfs
 	url = https://gerrit.googlesource.com/plugins/lfs
-[submodule "go-import"]
-	path = go-import
-	url = https://gerrit-review.googlesource.com/go-import
 [submodule "log-level"]
 	path = log-level
 	url = https://gerrit-review.googlesource.com/plugins/log-level
 [submodule "reviewers"]
 	path = reviewers
 	url = https://gerrit-review.googlesource.com/plugins/reviewers
+[submodule "go-import"]
+	path = go-import
+	url = https://gerrit-review.googlesource.com/plugins/go-import
