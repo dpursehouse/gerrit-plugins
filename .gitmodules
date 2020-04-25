@@ -34,3 +34,6 @@
 [submodule "gc-conductor"]
 	path = gc-conductor
 	url = https://gerrit-review.googlesource.com/plugins/gc-conductor
+[submodule "admin-console"]
+	path = admin-console
+	url = https://gerrit-review.googlesource.com/plugins/admin-console
