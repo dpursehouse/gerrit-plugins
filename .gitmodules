@@ -40,3 +40,27 @@
 [submodule "changemessage"]
 	path = changemessage
 	url = https://gerrit-review.googlesource.com/plugins/changemessage
+[submodule "javamelody"]
+	path = javamelody
+	url = https://gerrit-review.googlesource.com/plugins/javamelody
+[submodule "messageoftheday"]
+	path = messageoftheday
+	url = https://gerrit-review.googlesource.com/plugins/messageoftheday
+[submodule "oauth"]
+	path = oauth
+	url = https://gerrit-review.googlesource.com/plugins/oauth
+[submodule "project-group-structure"]
+	path = project-group-structure
+	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
+[submodule "quota"]
+	path = quota
+	url = https://gerrit-review.googlesource.com/plugins/quota
+[submodule "slack-integration"]
+	path = slack-integration
+	url = https://gerrit-review.googlesource.com/plugins/slack-integration
+[submodule "task"]
+	path = task
+	url = https://gerrit-review.googlesource.com/plugins/task
+[submodule "uploadvalidator"]
+	path = uploadvalidator
+	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
