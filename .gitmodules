@@ -25,9 +25,6 @@
 [submodule "readonly"]
 	path = readonly
 	url = https://gerrit-review.googlesource.com/plugins/readonly
-[submodule "reviewers"]
-	path = reviewers
-	url = https://gerrit-review.googlesource.com/plugins/reviewers
 [submodule "slack-integration"]
 	path = slack-integration
 	url = https://gerrit-review.googlesource.com/plugins/slack-integration
