@@ -61,3 +61,6 @@
 [submodule "serviceuser"]
 	path = serviceuser
 	url = https://gerrit-review.googlesource.com/plugins/serviceuser
+[submodule "batch"]
+	path = batch
+	url = https://gerrit-review.googlesource.com/plugins/batch
