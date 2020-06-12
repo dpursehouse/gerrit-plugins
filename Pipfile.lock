@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8e1cbcb92298eb85a3b6ace6243b75cee1b4924c28e4fe2e9966cd90f7990d5b"
+            "sha256": "35aafa2ad99277699570bf4a202f00c200230825ea69ea23d8ead393a62a89e5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -29,6 +29,28 @@
                 "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
             ],
             "version": "==3.0.4"
+        },
+        "dulwich": {
+            "hashes": [
+                "sha256:0abe66deb00030d8f6965cc6802c3d6b14aa386e48d72ad68317d12ae0656a6b",
+                "sha256:12993c57e9f3988e327a939050f16808129f3b2cfa4ac628b23db2a5db467953",
+                "sha256:272f95c34435f427ecbec9f5aa84b81cfed8cbb093393bfac1a3d3907c1b2a24",
+                "sha256:273fa401e11c215ed81a4a0c8474ed06aeae31900974fdd4a87af5df0e458115",
+                "sha256:30cee03fe8417c535d6486caf81f6d649dcc4cdb9e683a9804ff542d8ea92c4c",
+                "sha256:420a109b920c011c75fd11191a863d59318a4d2540f9b59ff74c53bb8c03b93c",
+                "sha256:4916452f9cde8ec72963641d28945e2ff36cced102b9fc3b1aa97b51a1a37a09",
+                "sha256:562d16a2acac458a3642c99b0fe9b102fea49844147b8079ff55c3d19423f0c4",
+                "sha256:69028ea580eec97de8b7dea95bfec834a745bd8467df3bdd8f29085b0131f365",
+                "sha256:76ab291e1fb9e5b29de68f007c11bcd740137d99c6e80fb561222fbc79867c60",
+                "sha256:7ce727bebbad254b738da2f180e6f67bee87e51e513d1822723f1390cd2833ec",
+                "sha256:9453ddce20f2961ffcedbed3981832f2c3f5ea41ae67a6af61ff15ad859fccab",
+                "sha256:be90e9b577734db41f0de8a786eb4aaa8b56bc1f0f28c34912033c1a778773d1",
+                "sha256:c25c5a26270c759fa1dbde3a5976b8e6d0401ba416fa67706d77b0aaaf453598",
+                "sha256:d302691430f978f53ef9af08f9e5546834066b53b580a5b4ca5b90c14ebc3da6",
+                "sha256:ddf8cb8574e7e48a2767a9cc937f8c02c4162e2c85f602cafee75bb5ed225777"
+            ],
+            "index": "pypi",
+            "version": "==0.20.2"
         },
         "idna": {
             "hashes": [
