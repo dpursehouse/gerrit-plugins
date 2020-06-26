@@ -16,9 +16,6 @@
 [submodule "javamelody"]
 	path = javamelody
 	url = https://gerrit-review.googlesource.com/plugins/javamelody
-[submodule "lfs"]
-	path = lfs
-	url = https://gerrit-review.googlesource.com/plugins/lfs
 [submodule "quota"]
 	path = quota
 	url = https://gerrit-review.googlesource.com/plugins/quota
