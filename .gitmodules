@@ -19,9 +19,6 @@
 [submodule "rename-project"]
 	path = rename-project
 	url = https://gerrit.googlesource.com/plugins/rename-project
-[submodule "lfs"]
-	path = lfs
-	url = https://gerrit.googlesource.com/plugins/lfs
 [submodule "log-level"]
 	path = log-level
 	url = https://gerrit-review.googlesource.com/plugins/log-level
