@@ -1,3 +1,6 @@
 [submodule "log-level"]
 	path = log-level
 	url = https://gerrit-review.googlesource.com/plugins/log-level
+[submodule "project-group-structure"]
+	path = project-group-structure
+	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
