@@ -10,3 +10,6 @@
 [submodule "serviceuser"]
 	path = serviceuser
 	url = https://gerrit-review.googlesource.com/plugins/serviceuser
+[submodule "rename-project"]
+	path = rename-project
+	url = https://gerrit-review.googlesource.com/plugins/rename-project
