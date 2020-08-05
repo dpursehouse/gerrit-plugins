@@ -16,3 +16,6 @@
 [submodule "high-availability"]
 	path = high-availability
 	url = https://gerrit-review.googlesource.com/plugins/high-availability
+[submodule "admin-console"]
+	path = admin-console
+	url = https://gerrit-review.googlesource.com/plugins/admin-console
