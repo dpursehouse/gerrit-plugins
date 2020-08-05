@@ -19,3 +19,6 @@
 [submodule "admin-console"]
 	path = admin-console
 	url = https://gerrit-review.googlesource.com/plugins/admin-console
+[submodule "uploadvalidator"]
+	path = uploadvalidator
+	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
