@@ -22,3 +22,6 @@
 [submodule "uploadvalidator"]
 	path = uploadvalidator
 	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
+[submodule "batch"]
+	path = batch
+	url = https://gerrit-review.googlesource.com/plugins/batch
