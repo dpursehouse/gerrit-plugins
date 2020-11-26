@@ -10,9 +10,6 @@
 [submodule "heartbeat"]
 	path = heartbeat
 	url = https://gerrit-review.googlesource.com/plugins/heartbeat
-[submodule "high-availability"]
-	path = high-availability
-	url = https://gerrit-review.googlesource.com/plugins/high-availability
 [submodule "javamelody"]
 	path = javamelody
 	url = https://gerrit-review.googlesource.com/plugins/javamelody
