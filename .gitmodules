@@ -1,6 +1,3 @@
-[submodule "high-availability"]
-	path = high-availability
-	url = https://gerrit-review.googlesource.com/plugins/high-availability
 [submodule "batch"]
 	path = batch
 	url = https://gerrit-review.googlesource.com/plugins/batch
