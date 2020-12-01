@@ -25,3 +25,6 @@
 [submodule "batch"]
 	path = batch
 	url = https://gerrit-review.googlesource.com/plugins/batch
+[submodule "slack-integration"]
+	path = slack-integration
+	url = https://gerrit-review.googlesource.com/plugins/slack-integration
