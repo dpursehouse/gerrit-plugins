@@ -4,3 +4,6 @@
 [submodule "slack-integration"]
 	path = slack-integration
 	url = https://gerrit-review.googlesource.com/plugins/slack-integration
+[submodule "uploadvalidator"]
+	path = uploadvalidator
+	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
