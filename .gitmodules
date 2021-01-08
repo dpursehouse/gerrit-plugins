@@ -34,3 +34,6 @@
 [submodule "quota"]
 	path = quota
 	url = https://gerrit-review.googlesource.com/plugins/quota
+[submodule "reviewassistant"]
+	path = reviewassistant
+	url = https://gerrit-review.googlesource.com/plugins/reviewassistant
