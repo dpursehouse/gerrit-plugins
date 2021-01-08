@@ -31,3 +31,6 @@
 [submodule "oauth"]
 	path = oauth
 	url = https://gerrit-review.googlesource.com/plugins/oauth
+[submodule "quota"]
+	path = quota
+	url = https://gerrit-review.googlesource.com/plugins/quota
