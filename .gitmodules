@@ -28,3 +28,6 @@
 [submodule "slack-integration"]
 	path = slack-integration
 	url = https://gerrit-review.googlesource.com/plugins/slack-integration
+[submodule "oauth"]
+	path = oauth
+	url = https://gerrit-review.googlesource.com/plugins/oauth
