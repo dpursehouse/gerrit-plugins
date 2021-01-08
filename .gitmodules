@@ -64,3 +64,6 @@
 [submodule "batch"]
 	path = batch
 	url = https://gerrit-review.googlesource.com/plugins/batch
+[submodule "reviewassistant"]
+	path = reviewassistant
+	url = https://gerrit-review.googlesource.com/plugins/reviewassistant
