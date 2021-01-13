@@ -7,8 +7,8 @@ This project contains several submodules, each of which is a Gerrit plugin.
 To update the bazlets revision on all plugins:
 
 ```
-git submodule foreach  ../update-bazlets.py -r 60bb597a9b8b0700334f8845ca61a7abc604ffcc -b master -v latest
-git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
+git submodule foreach  ../update-bazlets.py -r 60bb597a9b8b0700334f8845ca61a7abc604ffcc -b stable-3.1 -v latest
+git submodule foreach 'git push origin HEAD:refs/for/stable-3.1 || echo not pushed'
 ```
 
 ## Format code
@@ -16,7 +16,7 @@ git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
 ```
 git submodule foreach 'git ls-files | grep java$ | xargs google-java-format -i'
 git submodule foreach 'git commit -a -m "Format all Java files with google-java-format" || echo nothing to commit'
-git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
+git submodule foreach 'git push origin HEAD:refs/for/stable-3.1 || echo not pushed'
 ```
 
 ## Format build files
@@ -24,15 +24,15 @@ git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
 ```
 git submodule foreach 'git ls-files | grep "WORKSPACE\|BUILD\|\.bzl$" | xargs buildifier -mode=fix'
 git submodule foreach 'git commit -a -m "Format all Bazel build files with buildifier" || echo nothing to commit'
-git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
+git submodule foreach 'git push origin HEAD:refs/for/stable-3.1 || echo not pushed'
 ```
 
 ## Update submodules
 
 ```
-git submodule foreach 'git fetch && git checkout -q origin/master'
+git submodule foreach 'git fetch && git checkout -q origin/stable-3.1'
 git commit -a -m "Update revisions"
-git push origin HEAD:master
+git push origin HEAD:stable-3.1
 ```
 
 ## Merge-up to here
@@ -46,8 +46,8 @@ git submodule foreach 'git diff || echo no diff'
 git submodule foreach 'f=`git rev-parse --git-dir`/hooks/commit-msg; curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg; chmod +x $f'
 git submodule foreach 'git commit -a || echo nothing to commit'
 git submodule foreach 'git status'
-git submodule foreach 'git push origin HEAD:refs/for/master || echo not pushed'
-git submodule foreach 'git reset origin/master'
+git submodule foreach 'git push origin HEAD:refs/for/stable-3.1 || echo not pushed'
+git submodule foreach 'git reset origin/stable-3.1'
 ```
 
 ## Review merge-up change using bazel
@@ -61,7 +61,7 @@ git submodule foreach 'git log -n 1'
 git submodule foreach 'bazel clean --expunge && bazel build $name || echo no standalone'
 git submodule foreach 'bazel test //... || echo no tests'
 git submodule foreach 'rm change.json change.fetch || echo no files'
-git submodule foreach 'git checkout -q origin/master'
+git submodule foreach 'git checkout -q origin/stable-3.1'
 ```
 
 ## Review bazlets upgrade change
