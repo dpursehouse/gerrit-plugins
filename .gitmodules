@@ -34,3 +34,6 @@
 [submodule "javamelody"]
 	path = javamelody
 	url = https://gerrit-review.googlesource.com/plugins/javamelody
+[submodule "go-import"]
+	path = go-import
+	url = https://gerrit-review.googlesource.com/plugins/go-import
