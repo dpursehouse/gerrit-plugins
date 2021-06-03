@@ -1,15 +1,3 @@
-[submodule "batch"]
-	path = batch
-	url = https://gerrit-review.googlesource.com/plugins/batch
-[submodule "slack-integration"]
-	path = slack-integration
-	url = https://gerrit-review.googlesource.com/plugins/slack-integration
-[submodule "uploadvalidator"]
-	path = uploadvalidator
-	url = https://gerrit-review.googlesource.com/plugins/uploadvalidator
-[submodule "rename-project"]
-	path = rename-project
-	url = https://gerrit-review.googlesource.com/plugins/rename-project
 [submodule "go-import"]
 	path = go-import
 	url = https://gerrit-review.googlesource.com/plugins/go-import
