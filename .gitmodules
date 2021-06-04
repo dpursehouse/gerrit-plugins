@@ -13,3 +13,6 @@
 [submodule "go-import"]
 	path = go-import
 	url = https://gerrit-review.googlesource.com/plugins/go-import
+[submodule "project-group-structure"]
+	path = project-group-structure
+	url = https://gerrit-review.googlesource.com/plugins/project-group-structure
