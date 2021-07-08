@@ -37,3 +37,6 @@
 [submodule "go-import"]
 	path = go-import
 	url = https://gerrit-review.googlesource.com/plugins/go-import
+[submodule "task"]
+	path = task
+	url = https://gerrit-review.googlesource.com/plugins/task
